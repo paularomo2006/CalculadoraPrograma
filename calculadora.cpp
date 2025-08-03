@@ -9,6 +9,21 @@ double sumar (double num1, double num2) {
 double restar (double num1, double num2) {
 	return num1 - num2;
 }
+
+// Función para multiplicar dos números
+double multiplicar(double a, double b) {
+    return a * b;
+}
+
+// Función para dividir dos números
+double dividir(double a, double b) {
+    if (b == 0) {
+        std::cerr << "Error: división por cero." << std::endl;
+        return 0; 
+    }
+    return a / b;
+}
+
 // Función que calcula la potencia de un número
 double potencia(double base, double exponente) {
     return pow(base, exponente);
