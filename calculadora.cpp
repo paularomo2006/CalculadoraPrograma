@@ -21,8 +21,12 @@ double raizCuadrada(double numero) {
 double logaritmo(double argumento) {
 	return log10(argumento);
 }
+// Función que calcula el logaritmo de un número
+double logaritmoNatural(double antilogaritmo) {
+	return log(antilogaritmo);
+}
 int main () {
-	int opcion, num1, num2, base, exponente, radicando, argumento;
+	int opcion, num1, num2, base, exponente, radicando, argumento, antilogaritmo;
 	bool continuar = true; 
 	
 	while (continuar) {
@@ -98,6 +102,16 @@ int main () {
 				} else {
 				//Se llama a la funcion si el argumento no es negativo ni cero
 				cout << "El resultado de logaritmo en base 10 de "<<argumento<<" es: " << logaritmo(argumento) << endl;
+				}
+				break;
+			case 8:
+				cout<<"Escriba el argumento del logaritmo natural: ";
+				cin>>antilogaritmo;
+				if (antilogaritmo<=0) { //Restricción del logaritmo natural
+				cout << "Error: no se puede calcular el logaritmo natural de cero o de numeros negativos." << endl;
+				} else {
+				//Se llama a la funcion si el antilogaritmo no es negativo ni cero
+				cout << "El resultado de logaritmo natural de "<<antilogaritmo<<" es: " << logaritmoNatural(antilogaritmo) << endl;
 				}
 				break;
 			case 9:
