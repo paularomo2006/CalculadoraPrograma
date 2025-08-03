@@ -13,9 +13,13 @@ double restar (double num1, double num2) {
 double potencia(double base, double exponente) {
     return pow(base, exponente);
 }
+// Función que calcula la raiz cuadrada de un número
+double raizCuadrada(double numero) {
+    return sqrt(numero);
+}
 
 int main () {
-	int opcion, num1, num2, base, exponente;
+	int opcion, num1, num2, base, exponente, radicando;
 	bool continuar = true; 
 	
 	while (continuar) {
@@ -72,6 +76,16 @@ int main () {
 				cout<<"Escriba el exponente: ";
 				cin>>exponente;
 				cout<<"El resultado de la potencia tomando ("<<base<<") como base y ("<<exponente<<") como exponente es: "<<potencia(base,exponente)<<endl;
+				break;
+			case 6:
+				cout<<"Escriba el radicando: ";
+				cin>>radicando;
+					if (radicando < 0) {
+					cerr << "Error: no se puede calcular la raiz cuadrada de un numero negativo." << endl;
+					} else {
+					//Llama a la funcion raizCuadrada luego de verificar que el radicando no sea negativo
+					cout<<"El resultado de la raiz cuadrada de ("<<radicando<<") es: "<<raizCuadrada(radicando)<<endl;
+					}
 				break;
 			case 9:
 				continuar = false;
