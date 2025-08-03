@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include <limits>
 using namespace std;
 
 double sumar (double num1, double num2) {
@@ -8,10 +9,14 @@ double sumar (double num1, double num2) {
 double restar (double num1, double num2) {
 	return num1 - num2;
 }
+// Función que calcula la potencia de un número
+double potencia(double base, double exponente) {
+    return pow(base, exponente);
+}
 
 int main () {
-	int opcion, num1, num2;
-	bool continuar = true;
+	int opcion, num1, num2, base, exponente;
+	bool continuar = true; 
 	
 	while (continuar) {
 		//Menu dinamico
@@ -60,6 +65,13 @@ int main () {
 				cout<<"Escriba otro numero: ";
 				cin>>num2;
 				cout<<"El resultado de la resta entre ("<<num1<<") - ("<<num2<<") = "<<restar(num1,num2)<<endl;
+				break;
+			case 5:
+				cout<<"Escriba la base: ";
+				cin>>base;
+				cout<<"Escriba el exponente: ";
+				cin>>exponente;
+				cout<<"El resultado de la potencia tomando ("<<base<<") como base y ("<<exponente<<") como exponente es: "<<potencia(base,exponente)<<endl;
 				break;
 			case 9:
 				continuar = false;
