@@ -17,9 +17,12 @@ double potencia(double base, double exponente) {
 double raizCuadrada(double numero) {
     return sqrt(numero);
 }
-
+// Función que calcula el logaritmo de un número
+double logaritmo(double argumento) {
+	return log10(argumento);
+}
 int main () {
-	int opcion, num1, num2, base, exponente, radicando;
+	int opcion, num1, num2, base, exponente, radicando, argumento;
 	bool continuar = true; 
 	
 	while (continuar) {
@@ -86,6 +89,16 @@ int main () {
 					//Llama a la funcion raizCuadrada luego de verificar que el radicando no sea negativo
 					cout<<"El resultado de la raiz cuadrada de ("<<radicando<<") es: "<<raizCuadrada(radicando)<<endl;
 					}
+				break;
+			case 7:
+				cout<<"Escriba el argumento del logaritmo: ";
+				cin>>argumento;
+				if (argumento<=0) { //Restricción del logaritmo
+				cout << "Error: no se puede calcular el logaritmo de cero o de numeros negativos." << endl;
+				} else {
+				//Se llama a la funcion si el argumento no es negativo ni cero
+				cout << "El resultado de logaritmo en base 10 de "<<argumento<<" es: " << logaritmo(argumento) << endl;
+				}
 				break;
 			case 9:
 				continuar = false;
